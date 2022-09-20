@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/common-header.css" />
+    <link rel="stylesheet" href="../css/sk_hynix.css" />
+    <title>SK hynix :: Overview</title>
+  </head>
+
+  <body>
+    <div class="layout">
+      <header class="header">
+        <div class="header-inner">
+          <div class="nav left-area">
+            <a href="../html/national_geographic.html">
+              <img src="../img/overview/left.png" alt="" />
+              <strong data-text="National Geographic">Previous</strong>
+            </a>
+          </div>
+
+          <div class="nav right-area">
+            <a href="../html/hyundai_casper.html">
+              <strong data-text="Hyundai Casper">Next</strong>
+              <img src="../img/overview/right.png" alt="" />
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <img src="../img/overview/main3.png" alt="" />
+      </main>
+
+      <section class="overview">
+        <div class="category cat-upper">
+          <div class="cat">
+            <div class="cat-title">Project</div>
+            <div class="cat-desc">SK hynix Landing Page</div>
+          </div>
+
+          <div class="cat">
+            <div class="cat-title">Type</div>
+            <div class="cat-desc">Web Clone Coding</div>
+          </div>
+
+          <div class="cat">
+            <div class="cat-title">Role</div>
+            <div class="cat-desc">Develope 100%</div>
+          </div>
+        </div>
+
+        <div class="category cat-lower">
+          <div class="cat">
+            <div class="cat-title">Tool</div>
+            <div class="cat-desc">
+              <img src="../img/overview/figma_icon.png" alt="" />
+              <img src="../img/overview/vscode_icon.png" alt="" />
+            </div>
+          </div>
+
+          <div class="cat">
+            <div class="cat-title">Term</div>
+            <div class="cat-desc">3 days</div>
+          </div>
+
+          <div class="cat">
+            <div class="cat-title">Client</div>
+            <div class="cat-desc">Personal Project</div>
+          </div>
+        </div>
+
+        <div class="line"></div>
+
+        <div class="overview-area">
+          <h2>Overview</h2>
+          <p>
+            이 프로젝트는 반응형 웹 페이지 제작 연습을 위해 기존 사이트의 메인
+            페이지 레이아웃과 디자인 Clone Coding 을 했습니다. Clone Coding
+            페이지이기 때문에, 최대한 기존 사이트와 동일하게 제작되도록
+            노력했습니다. 모바일 사용자에게 편리한 반응형 레이아웃으로
+            구성되었고, 뉴스 탭은 Slick-Slide 기능을 이용해 최신 정보를 보다
+            쉽게 볼 수 있습니다.
+          </p>
+        </div>
+
+        <div class="button-area">
+          <a href="../SK_hynix/index.html" target="_blank" class="live-btn"
+            >View Live</a
+          >
+          <a
+            href="https://github.com/yejiseo0725/SK_hynix"
+            target="_blank"
+            class="github-btn"
+          >
+            Go Github
+          </a>
+        </div>
+      </section>
+
+      <section class="guide">
+        <img src="../img/SKhynix/SKhynix_guide_img.jpg" alt="" />
+
+        <div class="button-area">
+          <a href="../SK_hynix/index.html" target="_blank" class="live-btn"
+            >View Live</a
+          >
+          <a
+            href="https://github.com/yejiseo0725/SK_hynix"
+            target="_blank"
+            class="github-btn"
+          >
+            Go Github
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>
+      let didScroll; // 유저 스크롤 알림
+      let lastScrollTop = 0;
+      let delta = 5; // 동작 구현 시작 위치
+      let navbarHeight = $("header").outerHeight(); // 영향 받을 요소
+
+      $(window).scroll(function (event) {
+        didScroll = true;
+      });
+
+      // 스크롤 실행 후, didScroll 상태를 재설정 (false)
+      setInterval(function () {
+        if (didScroll) {
+          hasScrolled();
+          didScroll = false;
+        }
+      }, 250);
+
+      function hasScrolled() {
+        let st = $(this).scrollTop(); // 현재 스크롤 위치
+
+        if (Math.abs(lastScrollTop - st) <= delta) return;
+
+        if (st > lastScrollTop && st > navbarHeight) {
+          $("header").removeClass("nav-down").addClass("nav-up");
+        } else {
+          if (st + $(window).height() < $(document).height()) {
+            $("header").removeClass("nav-up").addClass("nav-down");
+          }
+        }
+
+        lastScrollTop = st;
+      }
+    </script>
+  </body>
+</html>

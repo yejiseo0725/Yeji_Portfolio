@@ -1,0 +1,602 @@
+.layout {
+}
+
+/* Header */
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 30;
+
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+}
+.header .nav {
+  width: 1350px;
+  height: 120px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+.header .nav h1 {
+  width: 100px;
+  height: 100px;
+}
+.header .nav h1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.header .nav .menu {
+  width: 50px;
+  height: 50px;
+}
+.header .nav .menu img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Main Visual */
+.main {
+  position: relative;
+  width: 100%;
+  height: 1080px;
+  min-height: 100%;
+  background-color: #000;
+  color: #fff;
+}
+
+.main .title-area {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  font-size: 4.5rem;
+  font-weight: 600;
+  line-height: 120px;
+  text-align: center;
+}
+
+.main .title-area .title-slide {
+  margin-bottom: 10px;
+}
+.main .title-area .title-slide .text {
+  font-size: 6.5rem;
+}
+.main .title-area .title-slide .text1 {
+  color: #df4747;
+}
+.main .title-area .title-slide .text2 {
+  color: var(--yellow);
+}
+.main .title-area .title-slide .text3 {
+  color: #4271eb;
+}
+
+.main .title-area h2 {
+}
+
+/* Section 00: Banner */
+section.sc0 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+
+  font-size: 3.75rem;
+  line-height: 80px;
+
+  background-color: #000;
+  transition: 1.5s;
+}
+section.sc0 .sc-inner {
+  position: relative;
+}
+section.sc0 h3 {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 400;
+
+  /* color: #fff; */
+  transition: 0.5s;
+  transition-delay: 0.3s;
+}
+section.sc0 h3 span {
+  color: var(--yellow);
+  font-weight: 600;
+}
+
+/* Section 01: About Me */
+section.sc1 {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 1080px;
+
+  background-color: #000;
+  color: #fff;
+}
+section.sc1 .title-area h4 {
+  margin-top: 100px;
+}
+
+section.sc1 .img-area {
+  position: relative;
+  margin-top: 10px;
+}
+section.sc1 .img-area img {
+  position: absolute;
+  right: 0;
+  width: 350px;
+  height: 550px;
+  border-radius: 200px;
+  object-fit: cover;
+  opacity: 90%;
+}
+
+section.sc1 .text-area {
+  width: 630px;
+  margin-top: 485px;
+}
+section.sc1 .text-area p {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@keyframes movingRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Section 02: Skills */
+section.sc2 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  height: 900px;
+}
+
+section.sc2 .title-area {
+  position: relative;
+  margin-top: 100px;
+  /* border: 3px solid tomato; */
+}
+section.sc2 .title-area::before {
+  content: "아이콘을 hover 하세요.";
+  position: absolute;
+  left: 0;
+  width: 400px;
+  padding-top: 60px;
+  font-size: 20px;
+}
+
+section.sc2 .icon-list {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  transform: translate(-50%, -50%);
+}
+section.sc2 .icon-list ul {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+section.sc2 ul li.list {
+  position: relative;
+  width: 280px;
+  height: 200px;
+  margin: 30px;
+}
+
+section.sc2 ul li.list .icon-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+section.sc2 ul li.list .icon-img img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  z-index: 10;
+}
+
+section.sc2 ul li.list .icon-desc {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: #ffdb58;
+  transition: 0.7s;
+  opacity: 0;
+  border-radius: 50px;
+}
+section.sc2 ul li.list .icon-desc p {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Hover */
+section.sc2 ul li.list:hover .icon-img {
+  transform: translateY(-50%);
+}
+section.sc2 ul li.list:hover .icon-desc {
+  transform: translateY(50%);
+  opacity: 1;
+  border-radius: 0;
+}
+
+/* Section 03: My Works */
+section.sc3 {
+  display: flex;
+  justify-content: center;
+  background-color: #000;
+
+  height: 1300px;
+}
+
+section.sc3 .title-area {
+  margin-top: 110px;
+  color: #fff;
+}
+
+section.sc3 ul.work-list {
+  position: relative;
+  font-size: 5.6rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 95px;
+}
+section.sc3 ul.work-list li.work {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  background-color: transparent;
+
+  margin-bottom: 10px;
+  transition: 0.5s;
+}
+section.sc3 ul.work-list li.work:hover:nth-child(1) {
+  background-color: #ff6741;
+}
+section.sc3 ul.work-list li.work:hover:nth-child(2) {
+  background-color: #040a16;
+}
+section.sc3 ul.work-list li.work:hover:nth-child(3) {
+  background-color: #252525;
+}
+section.sc3 ul.work-list li.work:hover:nth-child(4) {
+  background-color: #2b8ab0;
+}
+section.sc3 ul.work-list li.work:hover:nth-child(5) {
+  background-color: #9532d6;
+}
+
+section.sc3 ul.work-list li.work:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transition: 1.5s;
+}
+
+section.sc3 ul.work-list li.work:hover img {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.7s;
+  transform: translateY(0);
+}
+
+section.sc3 ul.work-list li.work::after {
+  opacity: 0;
+  visibility: hidden;
+
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+
+  font-size: 1.625rem;
+  font-weight: 500;
+  color: var(--yellow);
+}
+section.sc3 ul.work-list li.work:nth-child(1)::after {
+  content: "친환경 못난이 채소박스 구독형 서비스: 반응형 웹 사이트";
+}
+section.sc3 ul.work-list li.work:nth-child(2)::after {
+  content: "지구의 역사를 기록한 지구의 일기장: 메인 페이지";
+}
+section.sc3 ul.work-list li.work:nth-child(3)::after {
+  content: "반도체 설계와 제조, 첨단기술의 중심: 반응형 메인 페이지";
+}
+section.sc3 ul.work-list li.work:nth-child(4)::after {
+  content: "개인의 특성에 맞추는 소형 SUV: 메인 페이지 ";
+}
+section.sc3 ul.work-list li.work:nth-child(5)::after {
+  content: "구출이 필요한 유기동물 입양 서비스: 랜딩 페이지";
+}
+
+section.sc3 ul.work-list li.work img {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  right: 30px;
+  top: -150px;
+  object-fit: cover;
+  transform: translateY(30px);
+}
+section.sc3 ul.work-list li.work img.laptop-img {
+  width: 328px;
+  height: 285px;
+}
+section.sc3 ul.work-list li.work img.phone-img {
+  width: 81px;
+  height: 166px;
+  right: 315px;
+  top: -30px;
+  z-index: 3;
+}
+section.sc3 ul.work-list li.work img.tablet-img {
+  width: 151px;
+  height: 206px;
+  right: 355px;
+  top: -70px;
+}
+
+/* Section 04: Get In Touch */
+section.sc4 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 700px;
+  background-color: var(--yellow);
+}
+section.sc4 .sc-inner {
+  position: relative;
+}
+
+section.sc4 .title-area {
+  margin-top: 100px;
+}
+
+section.sc4 .text-area {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+section.sc4 .text-area p {
+  font-size: 5.5rem;
+  font-weight: 800;
+}
+section.sc4 .text-area p:last-child {
+  font-size: 1.625rem;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+section.sc4 footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+section.sc4 footer a {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 45px;
+}
+section.sc4 footer a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 10px;
+  }
+  .sc-inner {
+    width: auto;
+  }
+  .main {
+    height: 1024px;
+  }
+  .main .title-area {
+    line-height: 80px;
+  }
+  section.sc1 .img-area {
+    margin-top: 50px;
+  }
+  section.sc1 .img-area img {
+    width: 200px;
+    height: 300px;
+    border-radius: 200px;
+  }
+  section.sc2 ul li.list {
+    width: 230px;
+    height: 180px;
+    margin: 5px;
+  }
+  section.sc2 ul li.list .icon-img img {
+    width: 100px;
+    height: 100px;
+  }
+  section.sc2 ul li.list .icon-desc p {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px;
+  }
+  /* Hover */
+  section.sc2 ul li.list:focus .icon-img {
+    transform: translateY(-50%);
+  }
+  section.sc2 ul li.list:focus .icon-desc {
+    transform: translateY(50%);
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  section.sc3 {
+    height: 1024px;
+  }
+
+  section.sc3 ul.work-list li.work {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+  /* Responsive Images */
+  section.sc3 ul.work-list li.work img {
+    right: 0;
+    top: -100px;
+  }
+  section.sc3 ul.work-list li.work img.laptop-img {
+    width: 220px;
+    height: 190px;
+  }
+  section.sc3 ul.work-list li.work img.phone-img {
+    width: 55px;
+    height: 110px;
+    right: 150px;
+    top: -20px;
+  }
+  section.sc3 ul.work-list li.work img.tablet-img {
+    width: 100px;
+    height: 140px;
+    right: 160px;
+    top: -50px;
+    z-index: 2;
+  }
+  section.sc3 ul.work-list {
+    font-size: 5.1rem;
+  }
+  section.sc4 footer a {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Responsive Phone */
+@media (max-width: 390px) {
+  html {
+    font-size: 10px;
+  }
+  .main {
+    height: 844px;
+  }
+
+  /* Section 00 */
+  section.sc0 {
+    font-size: 2.6rem;
+    line-height: 50px;
+  }
+
+  /* Secion 01 */
+  section.sc1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    height: 844px;
+  }
+  section.sc1 .title-area h4 {
+    margin-top: 0;
+  }
+  section.sc1 .img-area {
+    margin-top: 70px;
+  }
+  section.sc1 .text-area {
+    width: 100%;
+    margin-top: 430px;
+  }
+  section.sc1 .text-area a.resume-btn {
+    margin-top: 30px;
+  }
+
+  /* Section 02 */
+  section.sc2 ul li.list {
+    width: 110px;
+    height: 220px;
+    margin: 0;
+  }
+  section.sc2 ul li.list .icon-img img {
+    width: 80px;
+    height: 80px;
+  }
+  section.sc2 ul li.list .icon-desc p {
+    font-size: 12px;
+    padding: 7px;
+  }
+
+  /* Section 03 */
+  section.sc3 {
+    height: 844px;
+  }
+  section.sc3 ul.work-list li.work {
+    height: 80px;
+    margin-bottom: 5px;
+  }
+  /* Responsive Images */
+  section.sc3 ul.work-list li.work img {
+    display: none;
+  }
+  section.sc3 ul.work-list {
+    font-size: 3.6rem;
+  }
+
+  /* Section 04 */
+  section.sc4 {
+    height: 550px;
+    background-color: var(--yellow);
+  }
+  section.sc4 .text-area p {
+    font-size: 3.2rem;
+  }
+  section.sc4 .text-area p:last-child {
+    font-size: 1.8rem;
+    margin-top: 10px;
+  }
+  section.sc4 footer a {
+    width: 60px;
+    height: 60px;
+  }
+}

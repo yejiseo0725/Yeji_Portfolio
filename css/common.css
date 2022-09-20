@@ -1,0 +1,32 @@
+/* Noto Sans KR */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+/* Raleway */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+:root {
+  --yellow: #ffdb58;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Raleway", "Noto Sans KR";
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+section .sc-inner {
+  width: 1350px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.title-area h4 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}

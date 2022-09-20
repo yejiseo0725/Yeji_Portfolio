@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Adopt a pet</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- 수정 -->
+    <!-- popup box 를 감싸는 wrap 만들어서, dimmed 처리 해주기 -->
+    <!-- 햄버거 X 버튼 아예 날리고, popup 에 따로 X 만들어서 위치 고정시키기 -->
+
+    <!-- container 밖으로 빼두기: 배경 누르면 popup 창 나가게 하기 위해 -->
+
+    <!-- 햄버거 버튼 -->
+    <div class="cat-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- popup 창 -->
+    <section class="popup-dimmed"></section>
+    <div class="popup-gnb">
+      <div class="close-btn">
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="gnb">
+        <img src="../images/logo_yellow.png" alt="" />
+
+        <div class="boxes">
+          <div class="box">
+            <img src="../images/dog.png" alt="" />
+            <span>DOG CARE</span>
+          </div>
+          <div class="box">
+            <img src="../images/cat.png" alt="" />
+            <span>CAT CARE</span>
+          </div>
+          <div class="box">
+            <img src="../images/paw.png" alt="" />
+            <span>ALL PET CARE</span>
+          </div>
+          <div class="box">
+            <img src="../images/animal-care.png" alt="" />
+            <span class="last">HELPING PETS</span>
+          </div>
+        </div>
+
+        <div class="search-wrap">
+          <h3>For Adoption Nearby</h3>
+          <div class="search-box">
+            <input type="text" placeholder="Enter Your Location" />
+            <a href="#"
+              ><div class="search-icon">
+                <i class="fa fa-map-marker" aria-hidden="true"></i></div
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -->
+
+    <!-- main landing contents -->
+    <div class="container">
+      <!-- video -->
+      <div class="video-frame">
+        <video src="../video/playing_dog.mp4" autoplay muted loop></video>
+      </div>
+
+      <!-- logo(header) -->
+      <a class="header-logo" href="https://www.petfinder.com/"
+        ><img src="../images/petfinder-logo.png" alt=""
+      /></a>
+
+      <section class="contents-wrap">
+        <div class="logo">
+          <img src="../images/petfinder-logo.png" alt="" />
+        </div>
+
+        <div class="title">
+          <h2>FIND A LONG LIFE FRIEND</h2>
+          <h1>ADOPT A PET</h1>
+          <p>
+            With more adoptable pets than ever, we have an urgent need for pet
+            adopters. Search for dogs, cats, and other available pets for
+            adoption near you.
+          </p>
+        </div>
+
+        <a class="btn-link" href="#">
+          <div class="btn">Find Here</div>
+        </a>
+      </section>
+    </div>
+
+    <script>
+      // 햄버거 클릭시, popup 창 toggle 로 나오게 하기
+      $(".cat-btn").click(function () {
+        $(this).addClass("on");
+        $(".popup-gnb").addClass("on");
+        $(".popup-dimmed").addClass("on");
+      });
+
+      // popup 의 close 버튼 클릭시, 원래대로 돌아오게
+      $(".close-btn").click(function () {
+        $(".cat-btn").removeClass("on");
+        $(".popup-gnb").removeClass("on");
+        $(".popup-dimmed").removeClass("on");
+      });
+
+      // 바탕 아무 곳이나 눌러도 popup 창이 사라지게 하기
+      $(".popup-dimmed").click(function () {
+        // .container 를 기준으로
+        $(".popup-gnb").removeClass("on");
+        $(".popup-dimmed").removeClass("on"); // dimmed 도 사라지게
+        $(".cat-btn").removeClass("on"); // 햄버거 X 도 사라지게 해주기
+      });
+    </script>
+  </body>
+</html>
